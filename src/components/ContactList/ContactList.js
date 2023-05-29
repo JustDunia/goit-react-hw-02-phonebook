@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import { ContactItem } from './ContactItem';
+import { ContactItem } from '../ContactItem/ContactItem';
 import styles from './ContactList.module.css';
 import { PropTypes } from 'prop-types';
 
 export class ContactList extends Component {
-  deleteContact = id => {
-    this.props.deleteContact(id);
+  handleDeleteContact = id => {
+    this.props.onDeleteContact(id);
   };
 
   render() {
@@ -20,7 +20,7 @@ export class ContactList extends Component {
             <ContactItem
               key={contact.id}
               contact={contact}
-              deleteContact={this.deleteContact}
+              onDeleteContact={this.handleDeleteContact}
             />
           ))}
       </ul>

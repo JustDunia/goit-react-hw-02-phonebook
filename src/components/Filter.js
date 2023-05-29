@@ -5,8 +5,8 @@ import { PropTypes } from 'prop-types';
 export class Filter extends Component {
   filterInputId = nanoid();
 
-  handleChange = e => {
-    this.props.onChange(e.target.value);
+  handleFilterChange = e => {
+    this.props.onFilterChange(e.target.value);
   };
 
   render() {
@@ -18,7 +18,7 @@ export class Filter extends Component {
           type="text"
           id={this.filterInputId}
           value={filterValue}
-          onChange={this.handleChange}
+          onChange={this.handleFilterChange}
           name="filter"
         />
       </div>

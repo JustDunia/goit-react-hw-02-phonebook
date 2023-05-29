@@ -3,8 +3,8 @@ import styles from './ContactItem.module.css';
 import { PropTypes } from 'prop-types';
 
 export class ContactItem extends Component {
-  deleteContact = e => {
-    this.props.deleteContact(e.target.value);
+  handleDeleteContact = e => {
+    this.props.onDeleteContact(e.target.value);
   };
   render() {
     const { contact } = this.props;
@@ -13,7 +13,7 @@ export class ContactItem extends Component {
         <span className={styles['contact-name']}>{contact.name}</span>:{' '}
         {contact.number}
         <button
-          onClick={this.deleteContact}
+          onClick={this.handleDeleteContact}
           value={contact.id}
           className={styles.btn}
         >
